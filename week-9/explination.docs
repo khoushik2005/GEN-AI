@@ -1,0 +1,64 @@
+🧪 What exactly was done in this lab
+1. 📥 Loaded sequential dataset
+You used multiple sentences (text data)
+This is sequential data where order of words matters
+Goal: learn patterns in sequences
+2. 🔢 Converted text to numbers (Tokenization)
+Used Tokenizer
+Each word → unique integer
+Example:
+machine → 1, learning → 2
+
+👉 This makes text usable for neural networks
+
+3. 🔗 Created input-output sequences
+Broke each sentence into smaller sequences
+
+Example:
+machine learning models
+→
+
+machine → learning
+machine learning → models
+
+👉 So model learns:
+previous words → next word
+
+4. 📏 Applied padding
+Made all sequences same length using pad_sequences
+Added zeros at beginning
+
+👉 Required for fixed input size in model
+
+5. 🎯 Split into input (X) and output (y)
+X = sequence of previous words
+y = next word
+
+Example:
+X = machine learning
+y = models
+
+6. 🔄 Converted output to one-hot encoding
+Output word converted into vector form
+Used for classification
+7. 🤖 Built LSTM model
+
+Model has 3 layers:
+
+Embedding layer → converts numbers to word vectors
+LSTM layer → learns sequence patterns and context
+Dense layer → predicts next word
+
+👉 This is a sequence-based generative model
+
+8. 🏋️ Trained the model
+Used dataset to train model (model.fit)
+Model learns word patterns over multiple epochs
+9. ✨ Generated new text
+Gave input like "machine learning"
+Model predicts next word repeatedly
+Forms a new sentence
+
+👉 Example output:
+machine learning models learn patterns from data
+
