@@ -1,0 +1,61 @@
+🧾 Step-by-Step Explanation
+1. Dataset (Sequential Data)
+You used sentences as training data
+Each sentence is a sequence of words
+Goal: learn patterns in these sequences
+
+2. Tokenization (Text → Numbers)
+Convert words into integers using Tokenizer
+Example:
+machine → 1, learning → 2
+Needed because models only understand numbers
+
+3. Sequence Creation
+Each sentence is broken into smaller sequences
+
+Example:
+machine learning helps
+→
+
+machine → learning
+machine learning → helps
+So model learns: previous words → next word
+
+4. Padding
+Make all sequences same length using pad_sequences
+Adds zeros at beginning
+Required for uniform input size
+
+5. Input (X) and Output (y)
+X = previous words
+y = next word
+
+Example:
+X = machine learning
+y = helps
+
+6. One-Hot Encoding
+Convert output word into vector form
+Example:
+helps → [0,0,1,0,...]
+Used for classification
+
+7. Model Building (Core Part)
+🔹 Embedding Layer
+Converts word numbers into meaningful vectors
+🔹 LSTM Layer
+Learns sequence patterns
+Remembers previous context
+🔹 Dense Layer
+Predicts probability of next word
+
+8. Training
+Model learns from input-output pairs
+Adjusts weights over 100 epochs
+Improves prediction accuracy
+
+9. Text Generation
+Start with a seed text (e.g., "machine learning")
+Model predicts next word
+Adds word and repeats
+Generates a full sentence
